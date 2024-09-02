@@ -43,9 +43,9 @@ export default function Header() {
                 <GiHamburgerMenu />
               </DropdownMenuTrigger>
               <DropdownMenuContent>
-                {menuItems?.map((menu) => (
-                  <DropdownMenuItem>
-                    <Link key={menu?.route} href={menu.route}>
+                {menuItems?.map((menu, index) => (
+                  <DropdownMenuItem key={index}>
+                    <Link key={index} href={menu.route}>
                       {menu?.title}
                     </Link>
                   </DropdownMenuItem>
@@ -59,8 +59,8 @@ export default function Header() {
           </div>
 
           <div className="hidden md:flex justify-between gap-3">
-            {menuItems?.map((menu) => (
-              <Link key={menu?.route} href={menu.route}>
+            {menuItems?.map((menu, index) => (
+              <Link key={index} href={menu.route}>
                 {menu?.title}
               </Link>
             ))}
